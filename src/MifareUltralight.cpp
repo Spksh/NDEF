@@ -33,7 +33,7 @@ NfcTag MifareUltralight::read()
 
     uint8_t index = 0;
     byte buffer[bufferSize];
-    for (uint8_t page = ULTRALIGHT_DATA_START_PAGE; page < ULTRALIGHT_MAX_PAGE; page+=(ULTRALIGHT_READ_SIZE/ULTRALIGHT_PAGE_SIZE))
+    for (uint8_t page = ULTRALIGHT_DATA_START_PAGE; page < ULTRALIGHT_MAX_PAGE && index < (messageLength + ndefStartIndex); page+=(ULTRALIGHT_READ_SIZE/ULTRALIGHT_PAGE_SIZE))
     {
         // read the data
         byte dataSize = ULTRALIGHT_READ_SIZE + 2;
