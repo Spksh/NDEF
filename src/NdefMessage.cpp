@@ -14,7 +14,7 @@ NdefMessage::NdefMessage(const byte * data, const uint16_t numBytes)
 
     _recordCount = 0;
 
-    int index = 0;
+    uint16_t index = 0;
 
     while (index < numBytes)
     {
